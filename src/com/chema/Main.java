@@ -7,10 +7,10 @@ public class Main {
     }
 
 
-    class Persona {
+   /* class Persona {
 
         String name;
         String phone;
 
-    }
+    } */
 }
