@@ -2,45 +2,49 @@ package com.chema;
 
 public class Agenda {
 
-        Agenda agenda = new Agenda();
 
+    public void calendar() {
+        boolean end = false;
 
-    public void play() {
-       /* boolean end = false;
-        int contadorError = 0;
-        Room currentRoom = MapGenerator.initialRoom;
         while (!end) {
-            Mensaje.printRoomDescription(currentRoom); */
-        Prompt.print();
-        String command = Prompt.read();
-        Command com = CommandParser.parse(command);
+            Prompt.print();
+            String command = Prompt.read();
+            Command com = CommandParser.parse(command);
 
-        switch (com) {
+            int errorcounter = 0;
 
-            case QUIT:
-                break;
+            switch (com) {
 
-            case HELP:
+                case QUIT:
 
-                break;
+                    end = true;
+                    break;
 
-            case ADD:
+                case HELP:
 
-                break;
+                    Help.printHelp();
 
-            case DELETE:
+                    break;
 
-                break;
+                case ADD:
 
-            case LIST:
+                    break;
 
-                break;
+                case DELETE:
 
-            case UNKNOWN:
+                    break;
 
-                break;
+                case LIST:
 
+                    break;
 
+                case UNKNOWN:
+
+                    errorcounter=Help.printUnknown(errorcounter);
+
+                    break;
+
+            }
         }
     }
 }
