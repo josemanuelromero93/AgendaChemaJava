@@ -4,7 +4,17 @@ import java.util.LinkedList;
 
 public class Contactos {
 
+
+
     private LinkedList<Persona> contacto = new LinkedList<>();
+
+    public LinkedList<Persona> getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(LinkedList<Persona> contacto) {
+        this.contacto = contacto;
+    }
 
     public Contactos(){
 
