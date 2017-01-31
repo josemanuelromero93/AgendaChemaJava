@@ -1,15 +1,19 @@
 package com.chema;
 
+import java.io.IOException;
+
 public class Agenda {
 
     Contactos contactos = new Contactos();
 
 
-    public void calendar() {
+
+    public void calendar() throws IOException {
+        contactos.readToArchive();
         boolean end = false;
 
         while (!end) {
-            Prompt.print();
+            Prompt.print(contactos.getContacto().size());
             String command = Prompt.read();
             Command com = CommandParser.parse(command);
 
@@ -18,7 +22,7 @@ public class Agenda {
             switch (com) {
 
                 case QUIT:
-
+                    contactos.saveInArchive();
                     end = true;
                     break;
 
@@ -33,6 +37,7 @@ public class Agenda {
                     contactos.getContacto().add(persona);
                     System.out.println();
                     Prompt.printList(contactos);
+
 
                     break;
 
@@ -57,7 +62,6 @@ public class Agenda {
                         }
 
                     }
-
 
                     break;
 

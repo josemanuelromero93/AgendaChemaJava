@@ -1,8 +1,10 @@
 package com.chema;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	// write your code here
 
         Title.printTitle();
@@ -13,10 +15,4 @@ public class Main {
     }
 
 
-   /* class Persona {
-
-        String name;
-        String phone;
-
-    } */
 }

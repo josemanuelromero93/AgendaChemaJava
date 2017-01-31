@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Prompt {
 
-    public static void print() {
-        System.out.print("> ");
+    public static void print(int cantidadcontactos) {
+        System.out.print("("+cantidadcontactos+")> ");
     }
     public static String read() {
 
@@ -38,7 +38,7 @@ public class Prompt {
     public static void printList(Contactos persona){
         System.out.println("Your list of contacts");
 
-        if (persona==null){
+        if (persona.getContacto().size()==0){
             System.out.println("Nothing to see here");
         }else {
             List<Persona> personas = persona.getContacto();
@@ -46,7 +46,6 @@ public class Prompt {
                 Persona p = personas.get(i);
                 System.out.print("(" + i + ") " + p.getName() + " - " );
                 System.out.println(p.getPhone());
-
             }
 
         }
